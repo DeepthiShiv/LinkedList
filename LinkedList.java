@@ -111,6 +111,20 @@ public class LinkedList{
 
     }
 
+    // to check if the linkedlist forms a cycle
+    public Boolean isCycle(Node head){
+        Node slow= head;
+        Node fast= head;
+        while(fast!=null && fast.next!=null){
+            if(slow==fast){
+                return true;
+            }
+            slow= slow.next;
+            fast= fast.next.next;
+        }
+        return false;
+    }
+    
     //print linkedlist
     public void print(){
         if(head==null){
